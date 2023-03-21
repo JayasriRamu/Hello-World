@@ -1,7 +1,7 @@
 node {
   stage('SonarQube analysis') {
     def scannerHome = tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
-    withSonarQubeEnv('SonarQube') { 
+    withSonarQubeEnv('localsonar') { 
       sh "${scannerHome}/bin/sonar-scanner"
     }
   }
